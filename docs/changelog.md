@@ -21,7 +21,7 @@ sample batches). `migrate.sh` / `rollback.sql` were exercised end-to-end.
 
 Stood up the 4-project .NET 8 solution structure (API / Application /
 Domain / Infrastructure), mapped every entity via EF Core Fluent API to the
-existing lowercase-snake-case `SGInsurance` schema (database-first, no EF
+existing lowercase-snake-case `motorportal` schema (database-first, no EF
 migrations run against it), added JWT authentication and the login
 endpoint, Swagger/OpenAPI, CORS, a real database-round-trip health check,
 and global exception-handling middleware with structured Serilog logging.

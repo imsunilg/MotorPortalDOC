@@ -9,7 +9,7 @@ minutes for a full pass.
 
 - [ ] PostgreSQL 16 service `postgresql-x64-16` is running and
       `motorportal` is reachable:
-      `PGPASSWORD=<pwd> psql -h localhost -U postgres -d motorportal -c "SET search_path TO \"SGInsurance\"; SELECT count(*) FROM user_master;"`
+      `PGPASSWORD=<pwd> psql -h localhost -U postgres -d motorportal -c "SET search_path TO \"motorportal\"; SELECT count(*) FROM user_master;"`
       → returns a row count > 0.
 - [ ] API: `dotnet run --project MotorPortal.API` (default `http://localhost:5795`).
       `GET /api/health` → `{"status":"healthy","database":"connected",...}`.

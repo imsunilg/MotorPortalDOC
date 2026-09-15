@@ -49,7 +49,7 @@ bash migrate.sh
 
 This is idempotent (safe to re-run) and runs, in order: `00_create_database.sql`
 (creates `motorportal`), `01_create_schema.sql` (creates schema
-`SGInsurance`), all 15 files in `scripts/02_tables/`, `03_constraints_indexes.sql`,
+`motorportal`), all 15 files in `scripts/02_tables/`, `03_constraints_indexes.sql`,
 all files in `scripts/04_functions/`, `scripts/05_views/`, and finally
 `06_seed_data.sql`.
 

@@ -20,7 +20,7 @@ names.
 `batch_master`, `batch_detail`, `invalid_records`, `premium_details`,
 `gst_details`, `proposal_master`, `payment_details`, `policy_master`,
 `policy_certificate`, `report_log`, `audit_log` — all in schema
-`"SGInsurance"` of database `motorportal`.
+`"motorportal"` of database `motorportal`.
 
 ## Diagram
 

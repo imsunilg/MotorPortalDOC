@@ -86,7 +86,7 @@ Requires JWT.
 
 | Method | Path | Request | Response | Purpose |
 |---|---|---|---|---|
-| POST | `/api/reports/policy-issue` | Body `PolicyIssueReportRequestDto { fromDate, toDate }` (`DateOnly`) | `200` — `.xlsx` file stream (`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`) | Queries `"SGInsurance".vw_policy_issue_report` filtered by issued date, writes a `report_log` row (`report_type = POLICY_ISSUE`), streams a generated workbook with columns matching `PolicyIssueReportRowDto` (`batchId, policyNumber, proposalNumber, masterPolicy, product, make, model, engineNumber, chassisNumber, premium, paymentStatus, issuedDate, user`). Always returns `200` with a valid workbook even for an empty date range — there is no "no data" error case |
+| POST | `/api/reports/policy-issue` | Body `PolicyIssueReportRequestDto { fromDate, toDate }` (`DateOnly`) | `200` — `.xlsx` file stream (`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`) | Queries `"motorportal".vw_policy_issue_report` filtered by issued date, writes a `report_log` row (`report_type = POLICY_ISSUE`), streams a generated workbook with columns matching `PolicyIssueReportRowDto` (`batchId, policyNumber, proposalNumber, masterPolicy, product, make, model, engineNumber, chassisNumber, premium, paymentStatus, issuedDate, user`). Always returns `200` with a valid workbook even for an empty date range — there is no "no data" error case |
 
 ## Error shape
 

@@ -17,7 +17,7 @@ graph LR
         API[MotorPortalAPI<br/>.NET 8 Web API<br/>Kestrel]
     end
     subgraph Data
-        DB[(MotorPortalDB<br/>PostgreSQL 16<br/>database motorportal<br/>schema SGInsurance)]
+        DB[(MotorPortalDB<br/>PostgreSQL 16<br/>database motorportal<br/>schema motorportal)]
     end
     DOC[MotorPortalDOC<br/>this repo — architecture, ER,<br/>API reference, setup, changelog]
 
@@ -65,7 +65,7 @@ graph TB
 The database is **database-first**: every table/column already exists
 (owned by MotorPortalDB) in lowercase snake_case, and EF Core's
 `AppDbContext` maps to that exact schema via Fluent API
-(`HasDefaultSchema("SGInsurance")`, explicit `.ToTable(...)` /
+(`HasDefaultSchema("motorportal")`, explicit `.ToTable(...)` /
 `.HasColumnName(...)` per entity — verified directly in
 `MotorPortal.Infrastructure/Data/AppDbContext.cs`). The API does not run EF
 Core migrations against this database; the PL/pgSQL functions/procedures
