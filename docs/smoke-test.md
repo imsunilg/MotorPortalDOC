@@ -8,8 +8,8 @@ minutes for a full pass.
 ## 0. Bring the stack up
 
 - [ ] PostgreSQL 16 service `postgresql-x64-16` is running and
-      `SGInsuranceDB` is reachable:
-      `PGPASSWORD=<pwd> psql -h localhost -U postgres -d SGInsuranceDB -c "SET search_path TO \"SGInsurance\"; SELECT count(*) FROM user_master;"`
+      `motorportal` is reachable:
+      `PGPASSWORD=<pwd> psql -h localhost -U postgres -d motorportal -c "SET search_path TO \"SGInsurance\"; SELECT count(*) FROM user_master;"`
       → returns a row count > 0.
 - [ ] API: `dotnet run --project MotorPortal.API` (default `http://localhost:5287`).
       `GET /api/health` → `{"status":"healthy","database":"connected",...}`.

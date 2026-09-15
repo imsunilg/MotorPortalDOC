@@ -17,7 +17,7 @@ graph LR
         API[MotorPortalAPI<br/>.NET 8 Web API<br/>Kestrel]
     end
     subgraph Data
-        DB[(MotorPortalDB<br/>PostgreSQL 16<br/>database SGInsuranceDB<br/>schema SGInsurance)]
+        DB[(MotorPortalDB<br/>PostgreSQL 16<br/>database motorportal<br/>schema SGInsurance)]
     end
     DOC[MotorPortalDOC<br/>this repo — architecture, ER,<br/>API reference, setup, changelog]
 

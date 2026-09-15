@@ -48,12 +48,12 @@ bash migrate.sh
 ```
 
 This is idempotent (safe to re-run) and runs, in order: `00_create_database.sql`
-(creates `SGInsuranceDB`), `01_create_schema.sql` (creates schema
+(creates `motorportal`), `01_create_schema.sql` (creates schema
 `SGInsurance`), all 15 files in `scripts/02_tables/`, `03_constraints_indexes.sql`,
 all files in `scripts/04_functions/`, `scripts/05_views/`, and finally
 `06_seed_data.sql`.
 
-To start over: `psql -d SGInsuranceDB -f rollback.sql`, then re-run
+To start over: `psql -d motorportal -f rollback.sql`, then re-run
 `migrate.sh`.
 
 Seeded login credentials (created by `06_seed_data.sql`, bcrypt-hashed via
@@ -71,7 +71,7 @@ The example file already matches the database set up in step 3:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=SGInsuranceDB;Username=postgres;Password=284228"
+    "DefaultConnection": "Host=localhost;Port=5432;Database=motorportal;Username=postgres;Password=284228"
   },
   "Jwt": {
     "Issuer": "MotorPortalAPI",
@@ -148,7 +148,7 @@ it works.
 
 | Symptom | Likely cause |
 |---|---|
-| `dotnet run` fails to connect to Postgres | Check `appsettings.Development.json`'s connection string against the Postgres instance actually running; confirm `SGInsuranceDB` exists (`psql -l`) |
+| `dotnet run` fails to connect to Postgres | Check `appsettings.Development.json`'s connection string against the Postgres instance actually running; confirm `motorportal` exists (`psql -l`) |
 | `ng serve` compiles but every API call 401s/fails | Confirm the API is actually running on the port `environment.development.ts` points at; confirm you're logged in (token in `sessionStorage`, not `localStorage`) |
 | Swagger doesn't show the upload endpoints correctly | Expected quirk documented in MotorPortalAPI's README — multipart file-upload actions need the `BatchUploadRequest` wrapper / `FileUploadOperationFilter` workaround already built into the shipped code; this doesn't affect the actual wire format |
 | `migrate.sh` fails partway through | It is safe to re-run after fixing the underlying issue — every script uses `CREATE TABLE IF NOT EXISTS` / `CREATE OR REPLACE` |
