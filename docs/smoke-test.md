@@ -11,13 +11,13 @@ minutes for a full pass.
       `motorportal` is reachable:
       `PGPASSWORD=<pwd> psql -h localhost -U postgres -d motorportal -c "SET search_path TO \"SGInsurance\"; SELECT count(*) FROM user_master;"`
       → returns a row count > 0.
-- [ ] API: `dotnet run --project MotorPortal.API` (default `http://localhost:5287`).
+- [ ] API: `dotnet run --project MotorPortal.API` (default `http://localhost:5795`).
       `GET /api/health` → `{"status":"healthy","database":"connected",...}`.
-- [ ] WEB: `ng serve` (default `http://localhost:4200`).
+- [ ] WEB: `ng serve` (default `http://localhost:4795`).
 
 ## a. Login
 
-- [ ] Go to `http://localhost:4200/login`.
+- [ ] Go to `http://localhost:4795/login`.
 - [ ] Enter Login ID `admin`, Password `admin123`, click **Sign In**.
 - [ ] Expect redirect to `/dashboard`.
 

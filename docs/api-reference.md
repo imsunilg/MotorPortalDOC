@@ -7,7 +7,7 @@ actually shipped, not the original LLD's planned endpoint list — a few
 things differ from that plan (see notes inline) and this document is the
 one to trust.
 
-Base URL (local dev): `http://localhost:5287/api` (see
+Base URL (local dev): `http://localhost:5795/api` (see
 `MotorPortal.API/Properties/launchSettings.json`).
 
 All request/response bodies are JSON unless noted (file upload/download

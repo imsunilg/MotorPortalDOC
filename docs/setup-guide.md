@@ -92,7 +92,7 @@ dotnet run --project MotorPortal.API
 ```
 
 The API listens on the URL printed at startup — typically
-`http://localhost:5287` (see `MotorPortal.API/Properties/launchSettings.json`).
+`http://localhost:5795` (see `MotorPortal.API/Properties/launchSettings.json`).
 Swagger UI is available at `http://localhost:<port>/swagger` in the
 Development environment; use the **Authorize** button with a JWT obtained
 from `POST /api/auth/login` to call protected endpoints from the UI.
@@ -100,7 +100,7 @@ from `POST /api/auth/login` to call protected endpoints from the UI.
 Quick check the API is actually talking to the database:
 
 ```bash
-curl http://localhost:5287/api/health
+curl http://localhost:5795/api/health
 # {"status":"healthy","database":"connected",...}
 ```
 
@@ -117,7 +117,7 @@ point at the API from step 4:
 ```ts
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:5287/api',
+  apiBaseUrl: 'http://localhost:5795/api',
 };
 ```
 
@@ -129,13 +129,13 @@ If MotorPortalAPI's port differs in your environment (check
 ng serve
 ```
 
-Open `http://localhost:4200` and log in with the seeded credentials:
+Open `http://localhost:4795` and log in with the seeded credentials:
 
 **Login ID:** `admin` &nbsp;&nbsp; **Password:** `admin123`
 
 ## 6. Verify the whole system
 
-Once all three are running (DB reachable, API on `:5287`, WEB on `:4200`),
+Once all three are running (DB reachable, API on `:5795`, WEB on `:4200`),
 run through **`docs/smoke-test.md`** in this repo — it is the full,
 step-by-step, ~15-20 minute checklist covering login, upload, batch
 processing, invalid records, payment tagging (including the seeded
